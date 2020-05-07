@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<style>
+input:invalid { 
+  border: 2px solid red;
+}
+
+input: valid
+{
+border: 2px solid blue;
+}
+</style>
+<head>
+ <title>Form</title>
+<script type="text/javascript">
+function getRandom_0to10(){
+var seed = Math.random();
+return seed = Math.ceil(seed * 10);
+}
+var num1 = getRandom_0to10();
+var num2 = getRandom_0to10();
+var sum = num1 + num2;
+</script>
+
+  </script></head>
+<body onload="num_gen();">
+<form id="form-id" onsubmit="return validateForm();" action="/cgi-bin/form1.pl" method="post">
+  First name:<br>
+  <input type="text" name="firstname" required>
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" required>
+  <br>
+   Email:<br>
+  <input type="text" name="email" required>
+  <br>
+  Phone xxx-xxx-xxxx:<br>
+  <input type="text" name="phone" size="12" required pattern="[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}">
+   <p><label for="phone">Preferred method of contact: </label>
+            <input type="radio" name="phone" value="P" />Phone
+            <input type="radio" name="email" value="E" />Email
+        </p>
+ <p>Please add these numbers
+<script type="text/javascript">
+document.write(num1 + " + " + num2 +" = ");
+</script>
+<input name="math" type="text" class="add"
+id="math" value="" size="4" required pattern="[0-9]{1,}">
+</p>
+  <button type="submit" value="Submit">Submit</button>
+   <script type="text/javascript">
+  function validateForm(){
+
+  var error = "Please try again.";
+  if (document.getElementById("math").value != sum) {
+  	alert(error);
+  	return false;
+  }
+ else return true;
+  
+    var firstname=document.forms["resgistration"]["First name"]
+var lastname=document.forms["resgistration"]["Last name"]
+var email=document.forms["resgistration"]["Email"]
+var phone=document.forms["resgistration"]["Phone number"]
+  
+  if (firstname.checkValidity()==false)
+{name.focus();
+return false;
+}else return true;
+
+if (lastname.checkValidity()==false)
+{name.focus();
+return false;
+} else return true;
+
+if (email.checkValidity()==false)
+{name.focus();
+return false;
+} else return true;
+if (phone.checkValidity()==false)
+{name.focus();
+return false;
+} else return true;
+  
+  }</script>
+  <button type="reset" value="Reset">Reset</button>   
+</form> 
+
+</body>
+
+</html>
